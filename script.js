@@ -55,4 +55,40 @@ d3.json(apiEndpoint).then(data => {
   d3.select('#chart')
     .node()
     .appendChild(svg.node());
+
+
+    fetch('https://data.princegeorgescountymd.gov/resource/amvf-x3gi.json')
+    .then(response => response.json())
+    .then(data => {
+      
+      localStorage.setItem('data', JSON.stringify(data));
+
+      
+      const dataList = document.getElementById('data-list');
+      data.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item.name;
+        dataList.appendChild(li);
+      });
+    });
+
+  
+  const filterButton = document.getElementById('filter-button');
+  filterButton.addEventListener('click', () => {
+    const filterInput = document.getElementById('filter-input');
+    const filterValue = filterInput.value.trim().toLowerCase();
+
+    
+    const data = JSON.parse(localStorage.getItem('data'));
+
+    
+    const filteredData = data.filter(item => item.name.toLowerCase().includes(filterValue));
+    const dataList = document.getElementById('data-list');
+    dataList.innerHTML = '';
+    filteredData.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item.name;
+      dataList.appendChild(li);
 });
+
+
