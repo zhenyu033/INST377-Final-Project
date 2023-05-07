@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Final Project</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-   
-</head>
-<body>
-    <div id="chartContainer"></div>
-    <script src="./script.js"></script>
-</body>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1>Prince Geroge's County Spendings</h1>
+      </header>
+      <h2>Bar Graph for Agency and Total Amount Spent</h2>
+      <div class="container">
+        <div id="chartContainer"></div>
+    </div>
+    <div class="left_section box">
+        <h3>Filter data</h3>
+        <form action="https://data.princegeorgescountymd.gov/resource/sk5x-gxv7.json" class="main_form">
+            <button type="button" id="data_load">Load Data</button>
+        </form>
+
+    </div>
+    <div class="right_section"></div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
 </html>
