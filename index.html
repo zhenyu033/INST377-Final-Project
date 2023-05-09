@@ -21,10 +21,34 @@
         <h3>Filter data</h3>
         <form action="https://data.princegeorgescountymd.gov/resource/sk5x-gxv7.json" class="main_form">
             <button type="button" id="data_load">Load Data</button>
+            <button type="button" id="data_clear">Clear Data</button>
+            <div>
+              <label for="agency">Filter Agency</label>
+              <input type="text" id="agency" name="agency"/>
+            </div>
+            <div class="button">
+              <button type="button" id="generate">Generate List</button>
+            </div>
         </form>
-
     </div>
-    <div class="right_section"></div>
+    <div class="right_section box">
+      <h3>Agency</h3>
+      <div class="box" >
+        <ol id="restaurant_list">
+          A list of Agency
+        </ol>
+            <div class="lds-ellipsis" id="data_load_animation">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+        </div>
+      </div>
+      <div class="center_button">
+        <a href="Page2.html">
+          <button>About</button>
+        </a>
+      </div>
     </div>
   </body>
   <script src="./script.js"></script>
